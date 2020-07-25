@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <!--    <link rel="stylesheet" href="css/login.css" type="text/css">-->
+</head>
+<body>
+<form class="login-page" action="/auth/login/mobile" method="post">
+    <div class="form">
+        <h3>账户登录</h3>
+
+        <!--图片验证码功能，action路径：/login-->
+        <input type="text" placeholder="用户名或手机号" name="mobile" required="required"/>
+    <!--    <input type="password" placeholder="密码" name="password" required="required"/>
+        <br/>
+                <span style="display: inline">
+                        <input class="validCodeInput" type="text" name="imageCode" placeholder="验证码"/>
+                        <img src="/code/image" class="code">
+                </span>-->
+
+        <!--短信验证码：action路径：/login/mobile-->
+        <span style="display: inline">
+            <input class="validCodeInput" type="text" name="smsCode" placeholder="验证码"/>
+<!--            不方便做提交手机号-->
+            <a href="/auth/code/sms?mobile=177">发送验证码</a>
+        </span>
+
+<!--        <input type="checkbox" name="remember-me"/> 记住我-->
+        <br/>
+        <button type="submit">登录</button>
+    </div>
+</form>
+</body>
+
+<style>
+    form {
+        background: beige;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .validCodeInput {
+        width: 50px;
+        height: 15px;
+    }
+
+    .code {
+        margin: 10px;
+    }
+
+    button {
+        margin: 10px 0px 10px 10%;
+    }
+</style>
+</html>

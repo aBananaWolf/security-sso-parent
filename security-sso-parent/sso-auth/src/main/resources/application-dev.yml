@@ -1,0 +1,31 @@
+server:
+  servlet:
+    session:
+      timeout: 3600
+      cookie:
+        max-age:
+    context-path: /auth # sso的认证中心比较奇怪，这里需要配置一个虚拟路径(不能只是”/”的一个路径)
+  port: 8080
+
+security:
+#  oauth2:
+#    client:
+#      client-id: test
+#      client-secret: test123456
+#      registered-redirect-uri: http://mrbird.cc
+  customizer:
+    enable-alternate-client-id: true
+
+
+spring:
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://192.168.133.133:3306/security?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 192.168.133.133
+    port: 6379
+    database: 0
+#  session: 注释掉session 共享，避免操作错误
+#    store-type: redis

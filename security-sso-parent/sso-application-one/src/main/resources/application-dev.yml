@@ -1,0 +1,23 @@
+server:
+  port: 8081
+security:
+  oauth2:
+    client:
+      client-id: test1
+      client-secret: test1111
+      user-authorization-uri: http://localhost:8080/auth/oauth/authorize
+      access-token-uri: http://localhost:8080/auth/oauth/token
+    resource:
+      jwt:
+        key-uri: http://localhost:8080/auth/oauth/token_key
+
+spring:
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://192.168.133.133:3306/security?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 192.168.133.133
+    port: 6379
+    database: 0
